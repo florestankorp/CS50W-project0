@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="style.css">
+    <title>Household Budget Calculator: Calculator</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="enter-names.html">Enter Names</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="history.html">History</a>
+    </nav>
+    <div class="calculator">
+        <div>
+            <h1>Shares Calculator</h1>
+            <h4>Household Expenses</h4>
+            <div class="input-area">
+                <label for="expenses">Total</label>
+                <input id="expenses"
+                       type="number"
+                       value="980">
+                <span>€</span>
+            </div>
+        </div>
+
+        <h4>Net Income</h4>
+
+        <div class="income">
+            <div class="input-area">
+                <label for="income-thelma">Thelma</label>
+                <input id="income-thelma"
+                       type="number"
+                       value="1600">
+                <span>€</span>
+            </div>
+        </div>
+
+        <div class="income">
+            <div class="input-area">
+                <label for="income-louise">Louise</label>
+                <input id="income-louise"
+                       type="number"
+                       value="1600">
+                <span class="euro-sign">€</span>
+            </div>
+        </div>
+
+        <div class="button-area">
+            <button onclick="calculate()"
+                    type="button">Calculate</button>
+        </div>
+
+
+        <div class="results">
+        </div>
+    </div>
+</body>
+<script type="text/javascript"
+        src="main.js">
+        </script>
+
+</html>
