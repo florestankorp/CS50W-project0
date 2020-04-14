@@ -1,23 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-          href="style.css">
-    <title>Household Budget Calculator: Enter Names</title>
-</head>
-
-<body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="enter-names.html">Enter Names</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="history.html">History</a>
-    </nav>
-    <div class="overlay">
+<shared-head></shared-head>
+<bootstrap-wrapper>
+    <div slot="content"
+         class="overlay">
         <h1>Shares Calculator</h1>
         <h2>Enter names</h2>
         <form action="javascript:handleIt()">
@@ -38,14 +25,12 @@
                            value="">
                 </div>
             </div>
-
-            <div class="button-area">
-                <button type="submit">Submit</button>
-            </div>
+            <button type="submit">Submit</button>
         </form>
     </div>
+</bootstrap-wrapper>
 
-</body>
 <script src="main.js"></script>
+<script src="actio.js"></script>
 
 </html>

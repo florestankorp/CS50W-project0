@@ -1,23 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-          href="style.css">
-    <title>Household Budget Calculator: Calculator</title>
-</head>
-
-<body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="enter-names.html">Enter Names</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="history.html">History</a>
-    </nav>
-    <div class="calculator">
+<shared-head></shared-head>
+<bootstrap-wrapper>
+    <div slot="content"
+         class="calculator">
         <div>
             <h1>Shares Calculator</h1>
             <h4>Household Expenses</h4>
@@ -52,16 +38,14 @@
             </div>
         </div>
 
-        <div class="button-area">
-            <button onclick="calculate()"
-                    type="button">Calculate</button>
-        </div>
-
-
+        <button onclick="calculate()"
+                type="button">Calculate</button>
         <div class="results">
         </div>
     </div>
-</body>
+</bootstrap-wrapper>
+
+<script src="actio.js"></script>
 <script type="text/javascript"
         src="main.js">
         </script>
