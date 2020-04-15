@@ -1,3 +1,123 @@
-
+@media only screen and (min-width: 480px) {
+  body {
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  body {
+    width: 100%;
+  }
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+body {
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background-size: 2500% 2500%;
+}
+body h4 {
+  margin: 0.5rem 0 0.5rem 0;
+}
+body ol {
+  max-width: 350px;
+  list-style: none;
+  padding-left: 40px;
+}
+body ol li {
+  padding: 0.5rem 0 0.5rem 0;
+  margin: 0 0 0.5rem 0;
+  counter-increment: bullet-count;
+  position: relative;
+}
+body ol li:before {
+  content: counter(bullet-count);
+  color: darkslategrey;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  left: calc(-1 * var(--size) - 10px);
+  line-height: var(--size);
+  --size: 32px;
+  width: var(--size);
+  height: var(--size);
+  top: 0;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+}
+body .button-area {
+  display: flex;
+  justify-content: flex-end;
+}
+body .button-area button {
+  border-radius: 0.4rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  mix-blend-mode: screen;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white;
+  color: darkslategrey;
+}
+body .input-area {
+  background: white;
+  color: darkslategrey;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  border: 1px solid white;
+  border-radius: 0.4rem;
+  align-items: baseline;
+}
+body .input-area input {
+  color: darkslategrey;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  background: none;
+  text-align: right;
+  width: 70%;
+}
+body .input-area input label {
+  height: 200%;
+  width: 22%;
+}
+body .input-area input:focus {
+  outline: none;
+}
+body .results {
+  border-radius: 0.4rem;
+}
+body .results .result {
+  display: flex;
+  margin: 1rem 0 1rem 0;
+  border: 1px solid white;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: baseline;
+}
 
 /*# sourceMappingURL=style.css.map */

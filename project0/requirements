@@ -4,7 +4,6 @@ DESIGN:
 
 BOOTSRTAP:
 * use Bootstrap 4 on your website, taking advantage of 
-    - at least one Bootstrap component, and 
     - using at least two Bootstrap columns for layout purposes using Bootstrap’s grid model.
 
 SCSS:

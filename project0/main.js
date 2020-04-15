@@ -34,22 +34,17 @@ function calculate() {
 }
 
 function showResults(shareLouise, shareThelma) {
-  return `            
-  <h4>Result</h4>
-  <div class="result" >
-    <label>Thelma</label>
-    <span id="result-thelma">${shareThelma} €</span>
-  </div>
-  <div class="result" >
-    <label>Louise</label>
-    <span id="result-louise">${shareLouise} €</span>
-  </div>`;
-}
-
-function handleIt() {
-  location.href = 'calculator.html';
-  // sessionStorage.setItem('USERS', JSON.stringify({ name: 'Thelma' }));
-  // sessionStorage.setItem('HISTORY', JSON.stringify({}));
+  return /*html*/ `
+    <h4>Result</h4>
+    <div class="result">
+      <label>Thelma</label>
+      <span id="result-thelma">${shareThelma} €</span>
+    </div>
+    <div class="result">
+      <label>Louise</label>
+      <span id="result-louise">${shareLouise} €</span>
+    </div>
+  `;
 }
 
 /** TODO:
