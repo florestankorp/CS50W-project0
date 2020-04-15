@@ -44,7 +44,7 @@ template.innerHTML = /*html*/ `
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 .col-md-2 col-lg-6">
+        <div class="col-sm-12 col-md-8 col-lg-6">
           <nav-bar></nav-bar>
           <div class="jumbotron bg-dark text-white">
             <p><slot name="content" /></p>

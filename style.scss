@@ -19,42 +19,42 @@
 // @include media-breakpoint-up(xl) { ... }
 
 
-$breakpoint-mobile: 480px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
-$breakpoint-hd: 1366px;
+// $breakpoint-mobile: 480px;
+// $breakpoint-tablet: 768px;
+// $breakpoint-desktop: 1024px;
+// $breakpoint-hd: 1366px;
 
-@media only screen and (min-width: $breakpoint-mobile) {
-    body {
-        width: 75%;
-    }
-}
+// @media only screen and (min-width: $breakpoint-mobile) {
+//     body {
+//         width: 75%;
+//     }
+// }
 
-@media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
-    body {
-        width: 50%;
-    }
-}
+// @media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+//     body {
+//         width: 50%;
+//     }
+// }
 
-@media only screen and (min-width: $breakpoint-desktop) and (max-width: $breakpoint-hd) {
-    body {
-        width: 100%;
-    }
-}
+// @media only screen and (min-width: $breakpoint-desktop) and (max-width: $breakpoint-hd) {
+//     body {
+//         width: 100%;
+//     }
+// }
 
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
+// @keyframes gradientBG {
+//     0% {
+//         background-position: 0% 50%;
+//     }
 
-    50% {
-        background-position: 100% 50%;
-    }
+//     50% {
+//         background-position: 100% 50%;
+//     }
 
-    100% {
-        background-position: 0% 50%;
-    }
-}
+//     100% {
+//         background-position: 0% 50%;
+//     }
+// }
 
 body {
     overflow: hidden;
@@ -139,12 +139,7 @@ body {
             border: none;
             background: none;
             text-align: right;
-            width: 70%;
-
-            label {
-                height: 200%;
-                width: 22%;
-            }
+            width: 100%;
 
             &:focus {
                 outline: none;
