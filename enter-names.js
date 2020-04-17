@@ -10,6 +10,6 @@ function submit() {
 
     location.href = 'calculator.html';
   } else {
-    console.log('error');
+    alert('Please enter names');
   }
 }

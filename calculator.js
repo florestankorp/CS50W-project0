@@ -1,52 +1,66 @@
 const PARTNER_NAMES = 'partner-names';
 const partnerNames = JSON.parse(sessionStorage.getItem(PARTNER_NAMES));
-
-const partnerOneName = partnerNames.partnerOne;
-const partnerTwoName = partnerNames.partnerTwo;
-
-document.querySelector('#income-partner-one-label').innerHTML =
-  partnerNames.partnerOne;
-
-document.querySelector('#income-partner-two-label').innerHTML =
-  partnerNames.partnerTwo;
+const { partnerOne, partnerTwo } = partnerNames;
+const HISTORY = 'history';
+document.querySelector('#income-partner-one-label').innerHTML = partnerOne;
+document.querySelector('#income-partner-two-label').innerHTML = partnerTwo;
 
 function calculate() {
   let shares = {};
 
   const expenses = parseInt(document.querySelector('#expenses').value);
-  const incomeThelma = parseInt(
+
+  const incomePartnerOne = parseInt(
     document.querySelector('#income-partner-one').value
   );
-  const incomeLouise = parseInt(
+
+  const incomePartnerTwo = parseInt(
     document.querySelector('#income-partner-two').value
   );
 
-  const totalIncome = incomeThelma + incomeLouise;
+  const totalIncome = incomePartnerOne + incomePartnerTwo;
 
-  const shareLouise = (incomeLouise / totalIncome) * expenses;
-  const shareThelma = (incomeThelma / totalIncome) * expenses;
+  const sharePartnerOne = (incomePartnerOne / totalIncome) * expenses;
+  const sharePartnerTwo = (incomePartnerTwo / totalIncome) * expenses;
 
-  shares.partnerOne = parseInt(shareThelma);
-  shares.partnerTwo = parseInt(shareLouise);
+  shares.partnerOne = parseInt(sharePartnerOne);
+  shares.partnerTwo = parseInt(sharePartnerTwo);
 
   document.querySelector('.results').innerHTML = showResults(
     shares.partnerTwo,
     shares.partnerOne
   );
 
-  return shares;
+  writeToSession(shares, expenses);
 }
 
-function showResults(shareLouise, shareThelma) {
+function showResults(sharePartnerOne, sharePartnerTwo) {
   return /*html*/ `
       <h4>Result</h4>
       <div class="result">
-        <label>${partnerOneName}</label>
-        <span>${shareThelma} €</span>
+        <label>${partnerOne}</label>
+        <span>${sharePartnerOne} €</span>
       </div>
       <div class="result">
-        <label>${partnerTwoName}</label>
-        <span>${shareLouise} €</span>
+        <label>${partnerTwo}</label>
+        <span>${sharePartnerTwo} €</span>
       </div>
     `;
+}
+
+function writeToSession(shares, expenses) {
+  const history =
+    sessionStorage.getItem(HISTORY) === null
+      ? []
+      : JSON.parse(sessionStorage.getItem(HISTORY));
+
+  const newEntry = {
+    date: new Date().toJSON().slice(0, 10).split('-').reverse().join('-'),
+    expenses,
+    partnerOne: shares.partnerOne,
+    partnerTwo: shares.partnerTwo,
+  };
+
+  const newHistory = [...history, newEntry];
+  sessionStorage.setItem('history', JSON.stringify(newHistory));
 }
