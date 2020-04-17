@@ -21,17 +21,14 @@ customElements.define(
       this.innerHTML = /*html*/ `
         <head>
           <meta charset="UTF-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-          <link rel="stylesheet" href="style.css" />
-          <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-            crossorigin="anonymous"
-          />
+          <meta name="viewport"
+                content="width=device-width, initial-scale=1.0" />
+          <link rel="stylesheet"
+                href="style.css" />
+          <link rel="stylesheet"
+                href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+                integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+                crossorigin="anonymous" />
         </head>
       `;
     }
@@ -39,6 +36,7 @@ customElements.define(
 );
 
 const template = document.createElement('template');
+
 template.innerHTML = /*html*/ `
   <shared-head></shared-head>
   <body>
@@ -47,7 +45,7 @@ template.innerHTML = /*html*/ `
         <div class="col-sm-12 col-md-8 col-lg-6">
           <nav-bar></nav-bar>
           <div class="jumbotron bg-dark text-white">
-            <p><slot name="content" /></p>
+            <p><slot name="content" />...</p>
           </div>
         </div>
       </div>

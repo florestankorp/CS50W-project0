@@ -1,22 +1,27 @@
 body {
-  overflow: hidden;
+  margin-top: 40px !important;
+  /* overflow: hidden; */
   font-family: Arial, Helvetica, sans-serif;
   background-size: 2500% 2500%;
 }
+
 body h4 {
   margin: 0.5rem 0 0.5rem 0;
 }
+
 body ol {
   max-width: 350px;
   list-style: none;
   padding-left: 40px;
 }
+
 body ol li {
   padding: 0.5rem 0 0.5rem 0;
   margin: 0 0 0.5rem 0;
   counter-increment: bullet-count;
   position: relative;
 }
+
 body ol li:before {
   content: counter(bullet-count);
   color: darkslategrey;
@@ -33,10 +38,12 @@ body ol li:before {
   border-radius: 50%;
   text-align: center;
 }
+
 body .button-area {
   display: flex;
   justify-content: flex-end;
 }
+
 body .button-area button {
   border-radius: 0.4rem;
   padding: 1rem 2rem;
@@ -52,6 +59,7 @@ body .button-area button {
   background: white;
   color: darkslategrey;
 }
+
 body .input-area {
   background: white;
   color: darkslategrey;
@@ -64,6 +72,7 @@ body .input-area {
   border-radius: 0.4rem;
   align-items: baseline;
 }
+
 body .input-area input {
   color: darkslategrey;
   font-size: 1rem;
@@ -73,12 +82,15 @@ body .input-area input {
   text-align: right;
   width: 100%;
 }
+
 body .input-area input:focus {
   outline: none;
 }
+
 body .results {
   border-radius: 0.4rem;
 }
+
 body .results .result {
   display: flex;
   margin: 1rem 0 1rem 0;
