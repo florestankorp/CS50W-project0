@@ -1,13 +1,47 @@
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  body {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  body {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  body {
+    width: 25%;
+  }
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 nav {
   align-items: baseline;
 }
 
 body {
-  background-color: #ffed9a !important;
-  margin-top: 45px !important;
-  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid white;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 2500% 2500%;
+  animation: gradientBG 20s ease infinite;
+  padding: 1rem;
 }
 body h4 {
   margin: 0.5rem 0 0.5rem 0;
@@ -39,9 +73,29 @@ body ol li:before {
   border-radius: 50%;
   text-align: center;
 }
+body .history table {
+  border-collapse: collapse;
+  width: 100%;
+}
+body .history table tr {
+  border-bottom: 1px solid #ccc;
+}
+body .history table tr th {
+  padding-bottom: 12px;
+  text-align: left;
+}
+body .history table tr:nth-child(even) {
+  color: darkslategrey;
+}
+body .history table tr th,
+body .history table tr td {
+  padding: 8px;
+  text-align: left;
+}
 body .button-area {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
 body .button-area button {
   border-radius: 0.4rem;

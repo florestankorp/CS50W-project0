@@ -1,78 +1,64 @@
-// Extra small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-hd: 1366px;
 
-// Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) { ... }
+@media only screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+    body {
+        width: 50%;
+    }
+}
 
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) { ... }
+@media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    body {
+        width: 50%;
+    }
+}
 
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) { ... }
+@media only screen and (min-width: $breakpoint-desktop) and (max-width: $breakpoint-hd) {
+    body {
+        width: 40%;
+    }
+}
 
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) { ... }
+@media only screen and (min-width: $breakpoint-hd) {
+    body {
+        width: 25%;
+    }
+}
 
-// @include media-breakpoint-up(sm) { ... }
-// @include media-breakpoint-up(md) { ... }
-// @include media-breakpoint-up(lg) { ... }
-// @include media-breakpoint-up(xl) { ... }
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
 
+    50% {
+        background-position: 100% 50%;
+    }
 
-// $breakpoint-mobile: 480px;
-// $breakpoint-tablet: 768px;
-// $breakpoint-desktop: 1024px;
-// $breakpoint-hd: 1366px;
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
-// @media only screen and (min-width: $breakpoint-mobile) {
-//     body {
-//         width: 75%;
-//     }
-// }
-
-// @media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
-//     body {
-//         width: 50%;
-//     }
-// }
-
-// @media only screen and (min-width: $breakpoint-desktop) and (max-width: $breakpoint-hd) {
-//     body {
-//         width: 100%;
-//     }
-// }
-
-// @keyframes gradientBG {
-//     0% {
-//         background-position: 0% 50%;
-//     }
-
-//     50% {
-//         background-position: 100% 50%;
-//     }
-
-//     100% {
-//         background-position: 0% 50%;
-//     }
-// }
 nav {
     align-items: baseline;
 }
 
 body {
-    background-color: rgb(255, 237, 154) !important;
-    margin-top: 45px !important;
-    overflow: hidden;
+    border-radius: 0.5rem;
+    border: 1px solid white;
+    // overflow: hidden;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
-    // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 2500% 2500%;
-    // animation: gradientBG 20s ease infinite;
+    animation: gradientBG 20s ease infinite;
+    padding: 1rem;
 
     h4 {
         margin: 0.5rem 0 0.5rem 0;
     }
-
-
 
     ol {
         max-width: 350px;
@@ -104,9 +90,42 @@ body {
         }
     }
 
+    .history {
+        table {
+            border-collapse: collapse;
+            width: 100%;
+
+
+
+
+            tr {
+                border-bottom: 1px solid #ccc;
+
+                th {
+                    padding-bottom: 12px;
+                    text-align: left;
+                }
+
+                &:nth-child(even) {
+                    color: darkslategrey;
+                }
+
+                th,
+                td {
+                    padding: 8px;
+                    text-align: left;
+
+                }
+            }
+        }
+
+
+    }
+
     .button-area {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
+        margin-top: 1rem;
 
         button {
             border-radius: 0.4rem;

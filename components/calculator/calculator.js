@@ -1,16 +1,8 @@
-const PARTNER_NAMES = 'partner-names';
-const HISTORY = 'history';
+partnerNames = JSON.parse(sessionStorage.getItem(PARTNER_NAMES));
+partnerNames ? ({ namePartnerOne, namePartnerTwo } = partnerNames) : '';
 
-const partnerNames = JSON.parse(sessionStorage.getItem(PARTNER_NAMES));
-
-if (!partnerNames) {
-  location.href = 'enter-names.html';
-}
-
-const { partnerOne, partnerTwo } = partnerNames;
-
-document.querySelector('#income-partner-one-label').innerHTML = partnerOne;
-document.querySelector('#income-partner-two-label').innerHTML = partnerTwo;
+document.querySelector('#income-partner-one-label').innerHTML = namePartnerOne;
+document.querySelector('#income-partner-two-label').innerHTML = namePartnerTwo;
 
 function calculate() {
   let shares = {};
@@ -30,12 +22,14 @@ function calculate() {
   const sharePartnerOne = (incomePartnerOne / totalIncome) * expenses;
   const sharePartnerTwo = (incomePartnerTwo / totalIncome) * expenses;
 
-  shares.partnerOne = parseInt(sharePartnerOne);
-  shares.partnerTwo = parseInt(sharePartnerTwo);
+  shares.amountPartnerOne = parseInt(sharePartnerOne);
+  shares.amountPartnerTwo = parseInt(sharePartnerTwo);
+
+  let { amountPartnerOne, amountPartnerTwo } = shares;
 
   document.querySelector('.results').innerHTML = showResults(
-    shares.partnerOne,
-    shares.partnerTwo
+    amountPartnerOne,
+    amountPartnerTwo
   );
 
   writeToSession(shares, expenses);
@@ -45,17 +39,19 @@ function showResults(sharePartnerOne, sharePartnerTwo) {
   return /*html*/ `
       <h4>Result</h4>
       <div class="result">
-        <label>${partnerOne}</label>
+        <label>${namePartnerOne}</label>
         <span>${sharePartnerOne} €</span>
       </div>
       <div class="result">
-        <label>${partnerTwo}</label>
+        <label>${namePartnerTwo}</label>
         <span>${sharePartnerTwo} €</span>
       </div>
     `;
 }
 
 function writeToSession(shares, expenses) {
+  const { amountPartnerOne, amountPartnerTwo } = shares;
+
   const history =
     sessionStorage.getItem(HISTORY) === null
       ? []
@@ -64,8 +60,8 @@ function writeToSession(shares, expenses) {
   const newEntry = {
     date: new Date().toJSON().slice(0, 10).split('-').reverse().join('-'),
     expenses,
-    partnerOne: shares.partnerOne,
-    partnerTwo: shares.partnerTwo,
+    amountPartnerOne,
+    amountPartnerTwo,
   };
 
   const newHistory = [...history, newEntry];
