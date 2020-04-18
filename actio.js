@@ -4,11 +4,18 @@ customElements.define(
     connectedCallback() {
       this.innerHTML = /*html*/ `
         <nav class="nav nav-pills flex-column flex-sm-row">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="enter-names.html">Enter Names</a>
-          <a class="nav-link" href="calculator.html">Calculator</a>
-          <a class="nav-link" href="history.html">History</a>
-        </nav>
+              <a class="nav-link"
+                href="index.html"><svg width="35"
+                      viewBox="0 0 64 64">
+                      <image href="circle-icons-calculator.svg" />
+                  </svg></a>
+              <a class="nav-link"
+                href="enter-names.html">Enter Names</a>
+              <a class="nav-link"
+                href="calculator.html">Calculator</a>
+              <a class="nav-link"
+                href="history.html">History</a>
+          </nav>
       `;
     }
   }
