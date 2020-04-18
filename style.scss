@@ -1,7 +1,68 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) { ... }
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) { ... }
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) { ... }
+
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ... }
+
+// @include media-breakpoint-up(sm) { ... }
+// @include media-breakpoint-up(md) { ... }
+// @include media-breakpoint-up(lg) { ... }
+// @include media-breakpoint-up(xl) { ... }
+
+
+// $breakpoint-mobile: 480px;
+// $breakpoint-tablet: 768px;
+// $breakpoint-desktop: 1024px;
+// $breakpoint-hd: 1366px;
+
+// @media only screen and (min-width: $breakpoint-mobile) {
+//     body {
+//         width: 75%;
+//     }
+// }
+
+// @media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+//     body {
+//         width: 50%;
+//     }
+// }
+
+// @media only screen and (min-width: $breakpoint-desktop) and (max-width: $breakpoint-hd) {
+//     body {
+//         width: 100%;
+//     }
+// }
+
+// @keyframes gradientBG {
+//     0% {
+//         background-position: 0% 50%;
+//     }
+
+//     50% {
+//         background-position: 100% 50%;
+//     }
+
+//     100% {
+//         background-position: 0% 50%;
+//     }
+// }
+
 body {
-    // overflow: hidden;
+    margin-top: 45px !important;
+    overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
+    // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 2500% 2500%;
+    // animation: gradientBG 20s ease infinite;
 
     h4 {
         margin: 0.5rem 0 0.5rem 0;
