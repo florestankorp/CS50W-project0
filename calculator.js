@@ -6,6 +6,7 @@ const partnerNames = JSON.parse(sessionStorage.getItem(PARTNER_NAMES));
 if (!partnerNames) {
   location.href = 'enter-names.html';
 }
+
 const { partnerOne, partnerTwo } = partnerNames;
 
 document.querySelector('#income-partner-one-label').innerHTML = partnerOne;

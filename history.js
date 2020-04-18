@@ -1,8 +1,13 @@
-const PARTNER_NAMES = 'partner-names';
-const partnerNames = JSON.parse(sessionStorage.getItem(PARTNER_NAMES));
-const { partnerOne, partnerTwo } = partnerNames;
-
 const HISTORY = 'history';
+const PARTNER_NAMES = 'partner-names';
+
+const partnerNames = JSON.parse(sessionStorage.getItem(PARTNER_NAMES));
+
+if (!partnerNames) {
+  location.href = 'enter-names.html';
+}
+
+const { partnerOne, partnerTwo } = partnerNames;
 const history = JSON.parse(sessionStorage.getItem(HISTORY));
 
 history.forEach((item) => {
