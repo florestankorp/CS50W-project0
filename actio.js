@@ -4,11 +4,18 @@ customElements.define(
     connectedCallback() {
       this.innerHTML = /*html*/ `
         <nav class="nav nav-pills flex-column flex-sm-row">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="enter-names.html">Enter Names</a>
-          <a class="nav-link" href="calculator.html">Calculator</a>
-          <a class="nav-link" href="history.html">History</a>
-        </nav>
+              <a class="nav-link"
+                href="index.html"><svg width="35"
+                      viewBox="0 0 64 64">
+                      <image href="circle-icons-calculator.svg" />
+                  </svg></a>
+              <a class="nav-link"
+                href="enter-names.html">Enter Names</a>
+              <a class="nav-link"
+                href="calculator.html">Calculator</a>
+              <a class="nav-link"
+                href="history.html">History</a>
+          </nav>
       `;
     }
   }
@@ -21,17 +28,14 @@ customElements.define(
       this.innerHTML = /*html*/ `
         <head>
           <meta charset="UTF-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-          <link rel="stylesheet" href="style.css" />
-          <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-            crossorigin="anonymous"
-          />
+          <meta name="viewport"
+                content="width=device-width, initial-scale=1.0" />
+          <link rel="stylesheet"
+                href="style.css" />
+          <link rel="stylesheet"
+                href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+                integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+                crossorigin="anonymous" />
         </head>
       `;
     }

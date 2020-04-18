@@ -1,7 +1,14 @@
 const PARTNER_NAMES = 'partner-names';
-const partnerNames = JSON.parse(sessionStorage.getItem(PARTNER_NAMES));
-const { partnerOne, partnerTwo } = partnerNames;
 const HISTORY = 'history';
+
+const partnerNames = JSON.parse(sessionStorage.getItem(PARTNER_NAMES));
+
+if (!partnerNames) {
+  location.href = 'enter-names.html';
+}
+
+const { partnerOne, partnerTwo } = partnerNames;
+
 document.querySelector('#income-partner-one-label').innerHTML = partnerOne;
 document.querySelector('#income-partner-two-label').innerHTML = partnerTwo;
 
@@ -27,8 +34,8 @@ function calculate() {
   shares.partnerTwo = parseInt(sharePartnerTwo);
 
   document.querySelector('.results').innerHTML = showResults(
-    shares.partnerTwo,
-    shares.partnerOne
+    shares.partnerOne,
+    shares.partnerTwo
   );
 
   writeToSession(shares, expenses);
@@ -62,5 +69,5 @@ function writeToSession(shares, expenses) {
   };
 
   const newHistory = [...history, newEntry];
-  sessionStorage.setItem('history', JSON.stringify(newHistory));
+  sessionStorage.setItem(HISTORY, JSON.stringify(newHistory));
 }

@@ -55,8 +55,13 @@
 //         background-position: 0% 50%;
 //     }
 // }
+nav {
+    align-items: baseline;
+}
 
 body {
+    background-color: rgb(255, 237, 154) !important;
+    margin-top: 45px !important;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
     // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -66,6 +71,8 @@ body {
     h4 {
         margin: 0.5rem 0 0.5rem 0;
     }
+
+
 
     ol {
         max-width: 350px;
@@ -84,9 +91,9 @@ body {
                 font-size: 1.5rem;
                 font-weight: bold;
                 position: absolute;
+                --size: 32px;
                 left: calc(-1 * var(--size) - 10px);
                 line-height: var(--size);
-                --size: 32px;
                 width: var(--size);
                 height: var(--size);
                 top: 0;
@@ -102,8 +109,6 @@ body {
         justify-content: flex-end;
 
         button {
-            // padding: 1rem;
-            // margin-top: 1rem;
             border-radius: 0.4rem;
             padding: 1rem 2rem;
             font-size: 1rem;
