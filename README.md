@@ -23,9 +23,11 @@ This project relies heavily on generating and appending HTML from JavaScript cod
 One such example can be seen in `calculator.js`
 
 ```javascript
+let { amountPartnerOne, amountPartnerTwo } = shares;
+
 document.querySelector('.results').innerHTML = showResults(
-  shares.partnerOne,
-  shares.partnerTwo
+  amountPartnerOne,
+  amountPartnerTwo
 );
 ```
 
@@ -57,8 +59,28 @@ This helped me abstract HTML into reusable components and have a more coherent s
 
 So `history.html` will have a `history.js` file which handles logic like fetching data from the _Session Storage_ and filling the fields inside of the corresponding template.
 
-### Validation and Error Handling
+### Checks, Validation and Error Handling
 
 - From _Enter Names_ attempting navigation to _Calculator_ will fail if names haven't been provided. The user will be alerted with a message
 
 - The navigation to _Calculator_ and _History_ will fail if names haven't been provided
+
+- As state is shared throughout the whole app values set in `main.js` can't be re-used, instead they have to be checked and overwritten:
+
+For example if `partnerNames` is instantiated in `main.js` as:
+
+```javascript
+let partnerNames = JSON.parse(sessionStorage.getItem(PARTNER_NAMES));
+```
+
+In `enter-names.js` there is a check if there is already a value assigned
+
+```javascript
+document.querySelector('#name-partner-one').value = partnerNames
+  ? partnerNames.namePartnerOne
+  : '';
+
+document.querySelector('#name-partner-two').value = partnerNames
+  ? partnerNames.namePartnerTwo
+  : '';
+```
