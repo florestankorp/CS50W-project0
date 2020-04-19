@@ -80,17 +80,13 @@ body .history table {
 body .history table tr {
   border-bottom: 1px solid #ccc;
 }
-body .history table tr th {
-  padding-bottom: 12px;
-  text-align: left;
-}
 body .history table tr:nth-child(even) {
   color: darkslategrey;
 }
 body .history table tr th,
 body .history table tr td {
   padding: 8px;
-  text-align: left;
+  text-align: right;
 }
 body .button-area {
   display: flex;
