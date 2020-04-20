@@ -66,8 +66,6 @@ So `history.html` will have a `history.js` file which handles logic like fetchin
 
 - From _Enter Names_ attempting navigation to _Calculator_ will fail if names haven't been provided. The user will be alerted with a message
 
-- The navigation to _Calculator_ and _History_ will fail if names haven't been provided
-
 - As state is shared throughout the whole app values set in `main.js` can't be re-used, instead they have to be checked and overwritten:
 
 For example if `partnerNames` is instantiated in `main.js` as:
