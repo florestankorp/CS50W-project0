@@ -7,6 +7,8 @@ Web Programming with Python and JavaScript
 
 This app helps households divide their expenses fairly, based on the income of the members.
 
+Watch the video description [here](https://youtu.be/eh6UmtioIn0)
+
 ## Usage
 
 1. Open `index.html`
